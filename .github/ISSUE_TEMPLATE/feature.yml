@@ -1,0 +1,40 @@
+name: Proposer une fonctionnalité
+description: Une idée pour améliorer Z01EXAM
+title: "[Feature] "
+labels: ["enhancement", "à valider"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci pour ton idée ! Décris-la simplement : un mainteneur la validera avant que quelqu'un la prenne.
+  - type: textarea
+    id: probleme
+    attributes:
+      label: Quel problème ça résout ?
+      description: Ce qui manque ou ce qui gêne aujourd'hui, du point de vue d'un apprenant.
+    validations:
+      required: true
+  - type: textarea
+    id: proposition
+    attributes:
+      label: Ce que tu proposes
+      description: Ce que l'apprenant verrait ou pourrait faire une fois la fonctionnalité en place.
+    validations:
+      required: true
+  - type: dropdown
+    id: brique
+    attributes:
+      label: Quelle partie du projet ?
+      options:
+        - Interface (ce qu'on voit dans le navigateur)
+        - Exercices et énoncés
+        - Correcteur (tests et moulinette)
+        - Je ne sais pas
+    validations:
+      required: true
+  - type: checkboxes
+    id: volontaire
+    attributes:
+      label: Envie de la coder ?
+      options:
+        - label: Je veux bien m'en occuper

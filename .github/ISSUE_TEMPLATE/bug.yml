@@ -1,0 +1,33 @@
+name: Signaler un bug
+description: Quelque chose ne marche pas comme prévu
+title: "[Bug] "
+labels: ["bug", "à valider"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Qu'est-ce qui ne marche pas ?
+    validations:
+      required: true
+  - type: textarea
+    id: etapes
+    attributes:
+      label: Comment le reproduire ?
+      description: Le parcours (Go, JS, Rust, Java), le mode (Exam, True Exam, Learning), l'exercice et ce que tu as fait.
+      placeholder: |
+        1. Parcours Go, mode Exam
+        2. Exercice « firstword »
+        3. Clic sur Tester avec ce code : ...
+    validations:
+      required: true
+  - type: textarea
+    id: attendu
+    attributes:
+      label: Ce que tu attendais / ce qui s'est passé
+    validations:
+      required: true
+  - type: textarea
+    id: captures
+    attributes:
+      label: Capture d'écran ou message d'erreur
+      description: Tu peux glisser une image directement ici.

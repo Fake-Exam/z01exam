@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: z02intra
+    env: go
+    plan: starter
+    autoDeploy: true
+    buildCommand: |
+      cd backend && go build -o ../server ./cmd/monolith
+    startCommand: ./server

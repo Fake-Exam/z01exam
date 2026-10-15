@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Z01EXAM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+    <header class="topbar">
+        <div class="topbar-left">
+            <a class="discord-link-btn" href="https://discord.gg/cP2Dn5DF6H" target="_blank" rel="noopener noreferrer">Join Discord</a>
+            <div class="track-switch" role="radiogroup" aria-label="Langage de la piscine">
+                <label class="track-option">
+                    <input type="radio" name="track-mode" value="go" id="track-go" checked>
+                    <span>Go</span>
+                </label>
+                <label class="track-option">
+                    <input type="radio" name="track-mode" value="js" id="track-js">
+                    <span>JS</span>
+                </label>
+                <label class="track-option">
+                    <input type="radio" name="track-mode" value="rust" id="track-rust">
+                    <span>Rust</span>
+                </label>
+                <label class="track-option">
+                    <input type="radio" name="track-mode" value="java" id="track-java">
+                    <span>Java</span>
+                </label>
+            </div>
+            <div id="exam-title" class="exam-title">Sélectionne un exercice</div>
+        </div>
+        <div class="topbar-right">
+            <div class="switch-group mode-switch-group">
+                <div class="mode-switch" role="radiogroup" aria-label="Mode de l'application">
+                    <label class="mode-option">
+                        <input type="radio" name="app-mode" value="exam" id="mode-exam" checked>
+                        <span>Exam</span>
+                    </label>
+                    <label class="mode-option">
+                        <input type="radio" name="app-mode" value="true-exam" id="mode-true-exam">
+                        <span>True Exam</span>
+                    </label>
+                    <label class="mode-option">
+                        <input type="radio" name="app-mode" value="learning" id="mode-learning">
+                        <span>Learning</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="layout">
+        <!-- LEFT: énoncé -->
+        <section class="left-panel">
+            <div class="chips-label">Exercises</div>
+            <div class="true-exam-panel">
+                <div class="chips-label">True Exam</div>
+                <div class="true-exam-actions">
+                    <button id="true-exam-next" class="btn-small">next</button>
+                    <button id="true-exam-restart" class="btn-small">restart</button>
+                </div>
+                <div id="true-exam-status" class="true-exam-status"></div>
+            </div>
+            <div class="filters">
+                <span class="filters-label">Niveau</span>
+                <div id="level-filters" class="chips"></div>
+            </div>
+            <div id="exercise-chips" class="chips"></div>
+
+            <div class="subject">
+                <div id="exercise-content" class="subject-box markdown-viewer">
+                    Choisis un exercice pour afficher le contenu complet du README.
+                </div>
+            </div>
+        </section>
+
+        <!-- Séparateur vertical redimensionnable -->
+        <div class="resize-handle vertical"></div>
+
+        <!-- RIGHT: éditeur + console -->
+        <section class="right-panel">
+            <div class="editor-container">
+                <div class="editor-header">
+                    <div id="editor-tab-label" class="editor-tab active">go main.go</div>
+                </div>
+
+                <div class="editor-box">
+                    <div class="editor-wrapper">
+                        <div class="line-numbers" aria-hidden="true">
+                            <pre id="line-numbers-text"></pre>
+                        </div>
+                        <pre id="highlighted-code" class="highlighted-code"><code></code></pre>
+                        <textarea id="code-editor" spellcheck="false"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resize-handle horizontal"></div>
+
+            <div class="console-container">
+                <div class="console-header">
+                    <span class="console-label">&lt;/&gt; console</span>
+                </div>
+                <pre id="output" class="console-box"></pre>
+
+                <div class="actions">
+                    <button id="run-btn" class="btn-run">run</button>
+                    <button id="clear-console" class="btn-run">clean console</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section id="learning-panel" class="learning-panel">
+        <div class="learning-header">
+            <div class="chips-label">Learning</div>
+            <div class="learning-subtitle">Contenus guidés pour réviser avant de coder.</div>
+        </div>
+        <div class="learning-body">
+            <div class="learning-layout">
+                <aside class="learning-sidebar">
+                    <div id="learning-lessons" class="learning-lessons"></div>
+                </aside>
+                <div class="learning-resize-handle vertical"></div>
+                <div class="learning-main">
+                    <div id="learning-content" class="learning-box markdown-viewer">
+                        Sélectionne une leçon dans la liste pour afficher son contenu.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="app.js"></script>
+<span id="version-badge" class="version-badge" title="Version exécutée" aria-label="Version exécutée">version…</span>
+<script src="version.js"></script>
+</body>
+</html>
+
+
+
