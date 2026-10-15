@@ -2,21 +2,27 @@
 
 ## Git et livraison
 
-- `main` est la branche d'intégration : les pushes directs y sont autorisés,
-  sans branche dédiée ni pull/merge request.
-- Ne pas demander une confirmation redondante avant un commit ou un push vers
-  `main`, sauf si une règle obligatoire de la plateforme l'impose.
-- Le déploiement de production est manuel. Ne pas le déclencher sans demande
-  explicite de l'utilisateur.
+- Ne jamais pousser directement sur `main` : elle est protégée.
+- Travailler sur une branche liée au ticket (`42-description-courte`) et ouvrir
+  une pull request, en brouillon dès le premier commit.
+- Une PR = un seul ticket, avec `Closes #N` dans la description.
+- La fusion est faite par le mainteneur principal après relecture et CI verte.
+- Le déploiement de production est manuel et approuvé par le mainteneur
+  principal. Ne jamais le déclencher.
 
-## Revue
+## Périmètre
 
-- Ne jamais lancer de revue Claude ni `ai-review-loop` dans ce dépôt.
-- Lorsqu'une revue indépendante est nécessaire, elle est réalisée par Sol.
+- Respecter les rôles décrits dans `docs/architecture-services.md` : une
+  modification ne touche qu'une brique (interface, catalogue, correcteur)
+  et garde ses contrats HTTP.
+- Ne pas modifier `.github/workflows/`, `scripts/deploy_vps.sh` ni
+  `.github/CODEOWNERS` sans ticket explicite.
+- Ne jamais écrire de secret, d'adresse de serveur ni de donnée personnelle
+  dans le dépôt.
 
 ## Qualité
 
-- Garder les changements ciblés et vérifier le comportement concerné avant la
-  livraison.
+- Garder les changements ciblés et vérifier le comportement concerné avant de
+  demander une relecture (`make start`, `go test ./...` dans `backend/`).
 - Ne pas modifier ou supprimer des tests uniquement pour obtenir un passage au
   vert.
