@@ -88,6 +88,7 @@ glisser la carte dans **En relecture**.
 - Toute PR est relue et approuvée par le mainteneur avant d'être fusionnée.
 - La mise en production est faite par le mainteneur, jamais automatiquement.
 - Un ticket pris sans nouvelles pendant deux semaines peut être réattribué.
+- Tout le monde respecte le [code de conduite](CODE_OF_CONDUCT.md).
 
 ## Où modifier quoi
 
