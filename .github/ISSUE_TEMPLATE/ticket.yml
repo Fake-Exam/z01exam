@@ -42,7 +42,7 @@ body:
     attributes:
       label: 💬 À discuter avant de coder
       description: Les décisions d'architecture ou de produit à trancher avec les mainteneurs avant de commencer. Sinon, « Rien de particulier ».
-      value: Rien de particulier : le périmètre est clair.
+      value: "Rien de particulier : le périmètre est clair."
     validations:
       required: true
   - type: dropdown
