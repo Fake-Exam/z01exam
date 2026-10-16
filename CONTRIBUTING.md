@@ -5,7 +5,14 @@ boutons, sans terminal.
 
 ## Ce qu'il te faut
 
-- Un compte GitHub, ajouté au projet par le mainteneur.
+- Un compte GitHub, ajouté au projet par le mainteneur, avec :
+  - la **double authentification** activée
+    ([Settings → Password and authentication](https://github.com/settings/security)),
+    obligatoire pour rejoindre l'organisation ;
+  - ton **e-mail privé** : coche *Keep my email addresses private* et *Block
+    command line pushes that expose my email* dans
+    [Settings → Emails](https://github.com/settings/emails). Sinon, ton
+    adresse personnelle apparaît publiquement dans chaque commit.
 - [GitHub Desktop](https://desktop.github.com/) pour récupérer et envoyer le code.
 - Un éditeur : VS Code ou WebStorm.
 - Pour lancer le site en local : Go 1.22 ou plus et Docker (voir le README).
