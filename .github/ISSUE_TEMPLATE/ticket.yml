@@ -1,0 +1,66 @@
+name: Ticket prêt à coder (mainteneurs)
+description: Un ticket spécifié, prêt à être pris par un contributeur
+labels: ["à valider"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Un bon ticket permet à un contributeur débutant de savoir **quoi faire** et **quand c'est fini**, sans deviner.
+  - type: textarea
+    id: contexte
+    attributes:
+      label: Contexte
+      description: Pourquoi ce ticket, ce qui existe aujourd'hui (avec les fichiers concernés).
+    validations:
+      required: true
+  - type: textarea
+    id: fonctionnel
+    attributes:
+      label: 🎯 Spec fonctionnelle
+      description: Ce que l'apprenant ou le mainteneur doit voir ou pouvoir faire. Comportements observables, cas limites.
+    validations:
+      required: true
+  - type: textarea
+    id: code
+    attributes:
+      label: 🛠️ Spec code
+      description: Brique concernée (interface, catalogue, correcteur, infra), fichiers à toucher, piste d'implémentation, contraintes (contrats HTTP, fichiers protégés).
+    validations:
+      required: true
+  - type: textarea
+    id: fini
+    attributes:
+      label: ✅ C'est fini quand
+      description: Critères vérifiables, sous forme de cases à cocher, tests compris (`go test ./...`, vérification avec `make start`).
+      value: |
+        - [ ] 
+        - [ ] `go test ./...` dans `backend/` reste vert.
+    validations:
+      required: true
+  - type: textarea
+    id: discussion
+    attributes:
+      label: 💬 À discuter avant de coder
+      description: Les décisions d'architecture ou de produit à trancher avec les mainteneurs avant de commencer. Sinon, « Rien de particulier ».
+      value: "Rien de particulier : le périmètre est clair."
+    validations:
+      required: true
+  - type: dropdown
+    id: brique
+    attributes:
+      label: Brique
+      options:
+        - Interface
+        - Exercices et énoncés
+        - Correcteur
+        - Infra
+    validations:
+      required: true
+  - type: checkboxes
+    id: reglages
+    attributes:
+      label: Réglages (à reporter en étiquettes)
+      options:
+        - label: Réservé aux mainteneurs (architecture, infra, données, sécurité) → étiquette `maintainers`
+        - label: Une discussion est nécessaire avant de coder → étiquette `à discuter`
+        - label: Idéal pour débuter → étiquette `good first issue`

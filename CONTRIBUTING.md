@@ -81,6 +81,15 @@ glisser la carte dans **En relecture**.
 - Une fois approuvée, la PR est fusionnée par le mainteneur et la carte passe
   dans **Fait**.
 
+## Les étiquettes des tickets
+
+- 🌱 `good first issue` : idéal pour débuter.
+- 🔒 `maintainers` : réservé aux mainteneurs (architecture, infra, données, sécurité).
+- 💬 `à discuter` : une décision est à prendre avant de coder ; lis la section « À discuter » du ticket et échange avec les mainteneurs.
+- `à valider` : proposition pas encore validée, on ne la prend pas.
+
+Chaque ticket décrit ce qui est attendu : contexte, spec fonctionnelle, spec code et « c'est fini quand ». Si quelque chose n'est pas clair, demande avant de coder.
+
 ## Les règles
 
 - On ne pousse jamais directement sur `main` : tout passe par une PR.
